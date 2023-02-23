@@ -1,0 +1,69 @@
+body {
+    background-color: #f2a1a3;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #ff5b5e;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+form {
+    border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-family: 'Nunito', sans-serif;
+        width: 100%;
+        max-width: 300px;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+input,
+select {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    max-width: 300px;
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #ff5b5e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #ff3336;
+}
+
+#message-container {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+}

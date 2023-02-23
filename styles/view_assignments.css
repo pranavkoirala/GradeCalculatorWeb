@@ -1,0 +1,52 @@
+body {
+    background-color: #a2d2ff;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+h1 {
+    color: #ffafcc;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th,
+td {
+    border: 1px solid #ffffff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+th {
+    background-color: #ffafcc;
+    color: #ffffff;
+}
+
+button {
+    background-color: #ffc8dd;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffafcc;
+}

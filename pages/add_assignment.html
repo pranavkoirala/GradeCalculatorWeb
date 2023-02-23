@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator App: Add Assignment</title>
+    <link rel="stylesheet" href="../styles/add_assignment.css" />
+    <script src="../scripts/add_assignments.js" defer></script>
+  </head>
+  <body>
+    <h1>Add Assignment</h1>
+
+    <div id="message-container"></div>
+
+    <form>
+      <label for="assignment-name">Name:</label>
+      <input type="text" id="assignment-name" name="assignment-name" /><br />
+
+      <label for="category">Category:</label>
+      <select id="category" name="category"></select
+      ><br />
+
+      <label for="points-earned">Points Earned:</label>
+      <input type="number" id="points-earned" name="points-earned" /><br />
+
+      <label for="points-possible">Points Possible:</label>
+      <input type="number" id="points-possible" name="points-possible" /><br />
+
+      <button type="submit">Add Assignment</button>
+      <button onclick="window.location.href='index.html'" class="back-btn">
+        Back
+      </button>
+    </form>
+  </body>
+</html>

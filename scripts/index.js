@@ -58,6 +58,9 @@ function updateFinalGradeText() {
 
   // Update final grade text
   finalGradeText.textContent = `Your current final grade is: ${finalGrade}%`;
+
+  // Save final grade to local storage
+  localStorage.setItem("finalGrade", finalGrade);
 }
 
 // Calculate final grade based on assignments and categories

@@ -12,6 +12,13 @@ viewAssignmentBtn.addEventListener("click", () => {
   window.location.href = "view_assignments.html";
 });
 
+// Grade Calculator button
+const gradeCalculatorBtn = document.querySelector("#grade-calculator-btn");
+gradeCalculatorBtn.addEventListener("click", () => {
+  // Navigate to Grade Calculator page
+  window.location.href = "grade_calculator.html";
+});
+
 // Add Category button
 const addCategoryBtn = document.querySelector("#add-category-btn");
 addCategoryBtn.addEventListener("click", () => {

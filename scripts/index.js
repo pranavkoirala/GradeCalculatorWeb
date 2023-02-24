@@ -32,6 +32,20 @@ const defaultFinalGradeText = finalGradeText.textContent;
 
 // Update final grade text
 function updateFinalGradeText() {
+  const categories = JSON.parse(localStorage.getItem("categories"));
+  const assignments = JSON.parse(localStorage.getItem("assignments"));
+
+  if (
+    !categories ||
+    !assignments ||
+    categories.length === 0 ||
+    assignments.length === 0
+  ) {
+    // If there are no assignments or categories, or if their length is 0, display the default text
+    finalGradeText.textContent = defaultFinalGradeText;
+    return;
+  }
+
   // Calculate final grade based on assignments and categories
   const finalGrade = calculateFinalGrade();
 

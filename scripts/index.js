@@ -2,35 +2,35 @@
 const addAssignmentBtn = document.querySelector("#add-assignment-btn");
 addAssignmentBtn.addEventListener("click", () => {
   // Navigate to Add Assignment page
-  window.location.href = "add_assignment.html";
+  window.location.href = "./pages/add_assignment.html";
 });
 
 // View Assignment button
 const viewAssignmentBtn = document.querySelector("#view-assignment-btn");
 viewAssignmentBtn.addEventListener("click", () => {
   // Navigate to View Assignment page
-  window.location.href = "view_assignments.html";
+  window.location.href = "./pages/view_assignments.html";
 });
 
 // Grade Calculator button
 const gradeCalculatorBtn = document.querySelector("#grade-calculator-btn");
 gradeCalculatorBtn.addEventListener("click", () => {
   // Navigate to Grade Calculator page
-  window.location.href = "grade_calculator.html";
+  window.location.href = "./pages/grade_calculator.html";
 });
 
 // Add Category button
 const addCategoryBtn = document.querySelector("#add-category-btn");
 addCategoryBtn.addEventListener("click", () => {
   // Navigate to Add Category page
-  window.location.href = "add_category.html";
+  window.location.href = "./pages/add_category.html";
 });
 
 // View Category button
 const viewCategoryBtn = document.querySelector("#view-category-btn");
 viewCategoryBtn.addEventListener("click", () => {
   // Navigate to View Category page
-  window.location.href = "view_categories.html";
+  window.location.href = "./pages/view_categories.html";
 });
 
 // Default text for final grade
@@ -103,3 +103,47 @@ function calculateFinalGrade() {
 
 // Call updateFinalGradeText() when page is loaded
 window.addEventListener("load", updateFinalGradeText);
+
+// Import Assignments button
+const importAssignmentsBtn = document.getElementById("import-assignments-btn");
+importAssignmentsBtn.addEventListener("click", handleImportAssignments);
+
+function handleImportAssignments() {
+  const fileInput = document.getElementById("import-assignments-input");
+  const file = fileInput.files[0];
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    const data = new Uint8Array(event.target.result);
+    const workbook = XLSX.read(data, { type: "array" });
+
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+
+    const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+    const assignments = [];
+
+    jsonData.forEach((item) => {
+      const firstCell = Object.keys(item)[0];
+      const regex = /^[0-9]+$/;
+
+      if (regex.test(item[firstCell])) {
+        const assignment = {
+          name: item.__EMPTY_1,
+          category: item.__EMPTY,
+          pointsEarned: item.__EMPTY_7,
+          pointsPossible: item.__EMPTY_9,
+          grade: ((item.__EMPTY_7 / item.__EMPTY_9) * 100).toFixed(2),
+        };
+
+        assignments.push(assignment);
+      }
+    });
+
+    localStorage.setItem("assignments", JSON.stringify(assignments));
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// TODO: Add extra credit support

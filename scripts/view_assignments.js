@@ -32,8 +32,15 @@ assignments.forEach((assignment) => {
   row.appendChild(pointsPossible);
 
   const grade = document.createElement("td");
-  grade.textContent = assignment.grade.toFixed(2) + "%"; // Round to 2 decimal places
-  row.appendChild(grade);
+  if (isNaN(assignment.grade)) {
+    grade.textContent = (
+      (assignment.pointsEarned / assignment.pointsPossible) *
+      100
+    ).toFixed(2);
+  } else {
+    grade.textContent = assignment.grade + "%"; // Round to 2 decimal places
+    row.appendChild(grade);
+  }
 
   // Add the row to the table body
   tbody.appendChild(row);

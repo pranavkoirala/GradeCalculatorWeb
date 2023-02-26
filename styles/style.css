@@ -8,7 +8,7 @@ html {
     font-family: 'Nunito', sans-serif;
 }
 
-h1 {
+h1, input {
     color: #ffa3a3;
     text-align: center;
     margin-top: 50px;
@@ -27,7 +27,7 @@ h2 {
     margin-top: 50px;
 }
 
-.feature-btn {
+.feature-btn, input {
     display: block;
     margin: auto;
     margin-top: 20px;

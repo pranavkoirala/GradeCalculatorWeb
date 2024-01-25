@@ -1,6 +1,6 @@
 const backButton = document.getElementById("go-back-btn");
 backButton.addEventListener("click", function () {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 });
 
 // Get assignments from local storage
